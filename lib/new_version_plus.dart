@@ -253,6 +253,7 @@ class NewVersionPlus {
     required VersionStatus versionStatus,
     String dialogTitle = 'Update Available',
     String? dialogText,
+    TextStyle? dialogTextStyle,
     String updateButtonText = 'Update',
     bool allowDismissal = true,
     String dismissButtonText = 'Maybe Later',
@@ -263,6 +264,7 @@ class NewVersionPlus {
     final dialogTextWidget = Text(
       dialogText ??
           'You can now update this app from ${versionStatus.localVersion} to ${versionStatus.storeVersion}',
+      style: dialogTextStyle ?? const TextStyle(fontSize: 16),
     );
 
     final launchMode = launchModeVersion == LaunchModeVersion.external
